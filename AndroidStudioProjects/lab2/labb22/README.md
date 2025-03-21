@@ -1,60 +1,66 @@
- Simple Calculator App
-Overview
-The Simple Calculator App is a Flutter application that performs basic arithmetic operations like addition, subtraction, multiplication, and division. It supports persistent state by saving the last calculated value using SharedPreferences.
+Simple Calculator Flutter App
+This is a simple calculator app built using Flutter. The app performs basic arithmetic operations such as addition, subtraction, multiplication, and division. It also uses SharedPreferences to persist the last calculated value even after the app is closed.
 
 Features
-Supports addition, subtraction, multiplication, and division operations.
-Saves the last calculated result for easy access when the app is reopened.
-Limits the display to 8 digits.
-Handles division by zero with an error message.
-Provides clear and clear entry options.
-Getting Started
-Prerequisites
-Before running the app, ensure you have the following installed:
+Basic arithmetic operations: +, -, *, /
+Memory persistence for the last calculated value using SharedPreferences
+Error handling for division by zero
+Limit input to 8 digits
+Clear Entry (CE) and Clear (C) functionalities
+Requirements
+Flutter SDK (version 2.0 or above)
+Dart SDK (version 2.12 or above)
+Setup
+Clone the repository or download the project files.
 
-Flutter SDK
-Dart SDK
-SharedPreferences package
-Installation Steps
-Clone or download the repository.
-Navigate to the project folder:
-sh
+bash
 Copy
 Edit
-cd simple_calculator_app
-Install the required dependencies:
-sh
+git clone https://github.com/your-repo/simple-calculator-flutter.git
+Navigate to the project directory.
+
+bash
+Copy
+Edit
+cd simple-calculator-flutter
+Install the necessary dependencies.
+
+bash
 Copy
 Edit
 flutter pub get
-Run the app:
-sh
+Run the app.
+
+bash
 Copy
 Edit
 flutter run
-Dependencies
-This app uses the following dependencies:
+How It Works
+Main Function: The app initializes SharedPreferences to retrieve the last calculated value and passes it to the CalculatorApp.
+
+CalculatorApp: This is the root widget that sets up the theme and passes the lastValue to the CalculatorScreen.
+
+CalculatorScreen: This stateful widget holds the logic for the calculator, including handling digit and operator presses, performing calculations, and updating the display.
+
+SharedPreferences: The last result is stored using SharedPreferences to allow persistence even after restarting the app.
+
+Features Breakdown
+Digits: Buttons for digits (0-9) allow the user to input numbers.
+
+Operators: Buttons for +, -, *, and / perform basic arithmetic operations.
+
+Equals Button: After entering an operation, the user can press = to compute the result.
+
+Clear and Clear Entry: The C button resets the entire calculation, while CE clears the current input.
+
+Example Screenshot
+(Here, you can add an image or screenshot of your app running)
+
+Troubleshooting
+SharedPreferences: Ensure that you have the shared_preferences package added in your pubspec.yaml file.
 
 yaml
 Copy
 Edit
 dependencies:
-  flutter:
-    sdk: flutter
   shared_preferences: ^2.0.15
-How to Use
-Launch the app to start using the calculator.
-Tap on the digits to input numbers.
-Use the operator buttons (+, -, *, /) to perform operations.
-Tap = to see the result.
-Tap CE to clear the current entry, or C to clear everything.
-Error Handling
-Displays "ERROR" when attempting division by zero.
-Limits the result display to 8 digits to avoid overflow.
-Saves the last calculated value even after the app is closed
-
- ### Screenshot
-![homepage](./image/image.png)
-
-##
-created this app with the help of AI
